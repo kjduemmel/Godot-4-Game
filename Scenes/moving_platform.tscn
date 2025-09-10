@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv672ilgkll6g"]
+
+[ext_resource type="Script" uid="uid://bsp0t2ckti1uo" path="res://Scripts/moving_platform.gd" id="1_vvyo4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_myvba"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vvyo4"]
+size = Vector3(10, 0.2, 10)
+
+[node name="MovingPlatform" type="CharacterBody3D"]
+script = ExtResource("1_vvyo4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_myvba")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_vvyo4")

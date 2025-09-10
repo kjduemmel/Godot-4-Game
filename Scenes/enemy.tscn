@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7ap7urlkejaq"]
+
+[ext_resource type="Script" uid="uid://cnpjiy2nisr7h" path="res://Scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="PackedScene" uid="uid://bnqcyri32ki58" path="res://Scenes/health_component.tscn" id="2_afpow"]
+[ext_resource type="PackedScene" uid="uid://b0q6u8mmwytv1" path="res://Scenes/hurtbox_component.tscn" id="3_287tu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hghv2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1f0kj"]
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_hghv2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_hghv2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_1f0kj")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_afpow")]
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_287tu")]

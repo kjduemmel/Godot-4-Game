@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://becc5xntifaql"]
+
+[ext_resource type="Script" uid="uid://mm0bm713in2d" path="res://Scripts/hitbox.gd" id="1_epkia"]
+
+[node name="Hurtbox" type="Area3D"]
+script = ExtResource("1_epkia")
